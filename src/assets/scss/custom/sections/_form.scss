@@ -1,0 +1,154 @@
+﻿@import '../custom-variables';
+
+$squire-check-mark-width: 1.3rem;
+$squire-check-mark-height: 1.3rem;
+$circle-check-mark-width: $squire-check-mark-width;
+$circle-check-mark-height: $squire-check-mark-height;
+
+// Custom check box
+.form-check-custom {
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .squire-check-mark {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        height: $squire-check-mark-height;
+        width: $squire-check-mark-width;
+        border: 2px solid $gray-300;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 7px;
+            height: 12px;
+            border: solid $primary;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            visibility: hidden;
+            opacity: 0;
+            transition: all .2s linear;
+        }
+    }
+
+    &:hover input ~ .squire-check-mark {
+        border-color: $gray-400;
+    }
+
+    input:checked ~ .squire-check-mark {
+        border-color: $primary;
+    }
+
+    input:checked ~ .squire-check-mark:after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.pl-0 {
+        padding-left: 0;
+    }
+
+    > label {
+        padding-left: $squire-check-mark-width + .6;
+    }
+}
+
+// Radio checkbox custom
+
+.radio-checkbox-custom {
+    padding-left: $circle-check-mark-width + .6;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .circle-check-mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $circle-check-mark-height;
+        width: $circle-check-mark-width;
+        border-radius: 50%;
+        border: 2px solid $gray-300;
+    }
+
+    &:hover input ~ .circle-check-mark {
+        border-color: $gray-400;
+    }
+
+    input:checked ~ .circle-check-mark {
+    }
+
+    .circle-check-mark:after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $primary;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s linear;
+    }
+
+    input:checked ~ .circle-check-mark:after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.form-container {
+    label {
+        //color: $gray-800;
+        font-weight: 500;
+    }
+
+    .user-pic-container {
+        width: 2.5rem;
+        min-width: 2.5rem;
+        height: 2.5rem;
+        max-height: 2.5rem;
+        border-radius: 50%;
+        border: 1px solid $base-border-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray-300;
+    }
+
+    .form-group-task {
+        font-size: $font-size-base * 1.1;
+        label {
+            color: $gray-900;
+        }
+        input {
+            font-size: $font-size-base * 1.2;
+            color: $gray-900;
+            border-color: transparent;
+            &:hover {
+                border-color: $base-border-color;
+            }
+        }
+    }
+}
+
+.min-width {
+    min-width: 6rem;
+}
+
+
+
+
+

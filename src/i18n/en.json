@@ -1,0 +1,153 @@
+﻿{
+  "CoreModule": {
+    "Login": "Login",
+    "ForgotPassword": "Forgot Password",
+    "UserName": "User Name",
+
+    "Label": {
+      "Login": "Login",
+      "SignIn": "Sign In to your account",
+      "Description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "ForgotPassword": "Forgot Password?",
+      "Create": "Add Password",
+      "ResetPassword": "You can reset your password here.",
+      "Reset": "Reset Password",
+      "NewPassword": "Create your new password.",
+      "UnableReset": "Unable to reset password.",
+      "InviteUser": "Invite User"
+    },
+    "Placeholder": {
+      "UserName": "User Name",
+      "FirstName": "First Name",
+      "LastName": "Last Name",
+      "Password": "Password",
+      "ConfirmPassword": "Confirm Password",
+      "Email": "Email",
+      "EmailAddress": "email address"
+    },
+    "Button": {
+      "Login": "Login",
+      "ForgotPassword": "Forgot Password",
+      "Reset": "Reset Password",
+      "Continue": "Continue Login",
+      "Create": "Create Password",
+      "Invite": "Invite User"
+    },
+    "Validations": {
+      "Required": "Required",
+      "PasswordRequired": "Password Required",
+      "EmailFormat": "Email is invalid",
+      "PasswordFormat": "Password must be 6 digit alphanumeric containing atleast 1 number, lower, upper and special character. ",
+      "MatchPassword": "Confirm Password don't match",
+      "Select": "Select at least one project",
+      "EmailExist": "Email already exist",
+      "UserExist": "User already exist"
+      
+
+    }
+  },
+  "AdminModule": {
+    "Choose": "Choose",
+    "Select": "Select",
+    "State": "State",
+    "WorkItemType": "Work Item Type",
+    "Assignment": "Assignment",
+    "SelectProject": "--Select Project--",
+    "Success": "Success!",
+    "DataSaved": " The Data has been saved successfully!!.",
+
+    "Label": {
+      "User": "Users ",
+      "Users": "VSTDesk Users",
+      "SearchUser": "Search User",
+      "ShortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiatnulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollitanim id est laborum.  ",
+      "LastName": "Last Name ",
+      "FirstName": "First Name ",
+      "PhoneNumber": "Phone Number ",
+      "Email": "Email ",
+      "Name": "Name ",
+      "UserDetails": "User Details",
+      "CustomStatus": "VSTS Custom Status",
+      "AssignedTo": "Assigned To",
+      "WorkItemType": "Work Item Type",
+      "DefaultValues": "Default Values For New Work Item",
+      "Flat": "Flat",
+      "Hierarchical": "Hierarchical",
+      "WorkItemId": "Work Item Id",
+      "ShowVSTDesk": "Show in VSTDesk",
+      "CustomFilters": "Custom Filters",
+      "Assignment": "Assignment",
+      "CustomerFeedback": "CustomerFeedback",
+      "Details": "Details",
+      "Status": "Status",
+      "Title": "Title",
+      "State": "State",
+      "FieldUpdate": "VSTS Fields To Be Updated",
+      "InternalQA": "Internal QA",
+      "Questions": "Questions",
+      "InProgress": "In Progress",
+      "InProduction": "In Production",
+      "Bug": "Bug",
+      "Feature": "Feature",
+      "UserStory": "User Story",
+      "Task": "Task",
+      "ProjectsList": "List Of Projects",
+      "ItemsToShow": "Work Items To Show",
+      "GridVisibleFields": "Work Item Grid Visible Columns",
+      "CompanyMessage": "Company Message",
+      "Layout": "Layout"
+
+
+
+    },
+    "Placeholder": {
+      "SearchUser": "Search User By Name"
+    },
+    "Button": {
+      "Submit": "Submit",
+      "Update": "Update",
+      "AddUser": "Add New User",
+      "Organization": "Organization",
+      "Group": "Group"
+    },
+    "Validations": {
+      "SelectOption": "Select option please",
+      "SelectCreatedWorkItemType": "Work Item Type is required",
+      "SelectAssignment": "Assigned To is required",
+      "SelectState": "State is required",
+      "Required": "Required",
+      "OnlyCharcters": "Only charcters are allowed",
+      "AssignToReq": "Assign to is required"
+    }
+
+  },
+
+  "CustomerModule": {
+    "Label": {
+      "State": "State",
+      "WorkItemType": "Work Item Type",
+      "Discussion": "Discussion",
+      "Title": "Title",
+      "AddWorkItem": "Create Work Item",
+      "EditWorkItem": "Edit Work Item",
+      "Description": "Description",
+      "Comments": "Comments",
+      "V": "V",
+      "ShortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ",
+      "WorkItemList": "Work Item List"
+    },
+    "Placeholder": {
+      "AddTitle": "Add Title",
+      "AddComments": "Add Comments.."
+    },
+    "Button": {
+      "Save": "Save ",
+      "Update": "Update"
+    },
+    "Validations": {
+      "TitleRequired": "Title is required"
+
+    }
+  }
+}

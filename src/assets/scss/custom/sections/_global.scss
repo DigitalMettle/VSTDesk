@@ -1,0 +1,256 @@
+﻿@import '../custom-variables';
+
+.link:hover {
+    text-decoration: underline;
+    color: $blue;
+    cursor: pointer;
+}
+
+.scroll-x {
+    overflow-x: auto;
+}
+
+.app-main-container {
+    background-color: $gray-bg;
+    min-height: 100vh;
+
+    .app-main-content {
+        flex: 1;
+        padding: 1.7rem;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    //height: calc(100vh - #{$app-header-height});
+    height: 100vh;
+    padding-top: $app-header-height;
+    overflow-y: auto;
+    margin-left: $side-navbar-width;
+
+    .close-sidebar &.content {
+        margin-left: 0;
+    }
+}
+// Custom scrollbar
+/*::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cfd1d4;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cfd1d4;
+}*/
+
+.container-fluid {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.user-list {
+    .breadcrumb {
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "|";
+            color: $gray-400;
+        }
+
+        a {
+            color: darken($primary, 15%)
+        }
+    }
+}
+
+.search-container {
+    padding: .5rem;
+    border: .175rem solid $gray-200;
+
+    .form-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        min-width: 3rem;
+    }
+}
+
+.user-list-conainer {
+    .list-group {
+        .user-pic {
+            width: 3.2rem;
+            min-width: 3.2rem;
+            height: 3.2rem;
+            border-radius: .375rem;
+            border: 2px solid $base-border-color;
+            background-size: cover;
+            margin-right: .5rem;
+            padding-right: 1.25rem;
+        }
+
+        .list-group-item {
+            &.has-edit-button {
+                position: relative;
+                padding-right: 3.9rem !important;
+
+                .buttons-group-holder {
+                    position: absolute;
+                    right: 0;
+                    top: .75rem;
+                }
+
+                .btn {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            p {
+                &.text-muted {
+                    padding-top: 5px;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}
+
+.upload-img-box {
+    border: 1px solid $base-border-color;
+    padding: 1rem;
+
+    .picture-block {
+        display: flex;
+        flex: 0 0 80px;
+        max-width: 80px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.upload-btn-holder {
+    .btn {
+        padding: 0;
+    }
+
+    .k-upload {
+        background-color: transparent;
+        border: none;
+
+        .k-upload-button {
+            margin: 0;
+            background: none;
+            color: #fff;
+
+            span {
+                font-size: $font-size-base;
+                padding: 3px;
+            }
+        }
+
+        .k-upload-files, kendo-upload-status-total {
+            display: none;
+        }
+    }
+}
+
+.ngx-charts-card {
+    .ngx-charts {
+        max-width: 710px;
+    }
+
+    .chart-legend {
+        width: 225px !important;
+
+        > div {
+            width: 250px;
+        }
+
+        .legend-labels {
+            width: 250px;
+
+            .legend-label-text {
+                color: $gray-800;
+            }
+        }
+    }
+}
+
+#toast-container > div {
+    opacity: 1 !important;
+}
+
+.ngx-charts-bar-container {
+    overflow: auto;
+}
+
+@include media-breakpoint-up(xl) {
+    .my-profile {
+        .col-right {
+            flex: 0 0 308px;
+            max-width: 308px;
+        }
+
+        .col-left {
+            flex: 1;
+        }
+    }
+}
+
+@include media-breakpoint-down(xl) {
+    .my-profile {
+        .col-right {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .content {
+        margin-left: 0;
+
+        .close-sidebar &.content {
+            margin-left: 0;
+        }
+    }
+    .card-body.scroll-x {
+        height: calc(100vh - 160px);
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .app-main-container {
+        .app-main-content {
+            padding: 1rem 1rem .75rem;
+        }
+    }
+
+    .content {
+        margin-left: 0;
+
+        .close-sidebar &.content {
+            margin-left: 0;
+        }
+    }
+
+    .upload-img-box {
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,22 @@
+﻿<div class="projects-list-container mb-3 justify-content-end ">
+    <label class="col-sm-2" for="inlineFormCustomSelect">{{'AdminModule.Label.ProjectsList' | translate}}</label>
+    <select class="custom-select col-sm-4" id="inlineFormCustomSelect" (change)="onSelect($event.target.value)">
+        <option *ngFor="let project of projectList" value={{project.Id}}>{{project.Name}}</option>
+    </select>
+
+</div>
+
+<div class="ngx-charts-bar-container">
+    <ngx-charts-bar-horizontal-stacked [view]="view"
+                                       [scheme]="colorScheme"
+                                       [results]="single"
+                                       [gradient]="gradient"
+                                       [xAxis]="showXAxis"
+                                       [yAxis]="showYAxis"
+                                       [legend]="showLegend"
+                                       [showXAxisLabel]="showXAxisLabel"
+                                       [showYAxisLabel]="showYAxisLabel"
+                                       [xAxisLabel]="xAxisLabel"
+                                       [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-horizontal-stacked>
+</div>

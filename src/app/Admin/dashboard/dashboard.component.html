@@ -1,0 +1,41 @@
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+    </nav>
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary" (click)="syncProject()">Sync Project</button>
+    </div>
+</div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card ngx-charts-card mb-4">
+                        
+                        <div class="card-body scroll-x">
+                            <h5 class="card-title">Users Per Project</h5>
+                            <ngx-charts-bar-horizontal [view]="view"
+                                                       [scheme]="colorScheme"
+                                                       [results]="single"
+                                                       [gradient]="gradient"
+                                                       [xAxis]="showXAxis"
+                                                       [yAxis]="showYAxis"
+                                                       [legend]="showLegend"
+                                                       [showXAxisLabel]="showXAxisLabel"
+                                                       [showYAxisLabel]="showYAxisLabel"
+                                                       [xAxisLabel]="xAxisLabel"
+                                                       [yAxisLabel]="yAxisLabel"
+                                                       (select)="onSelect($event)">
+                                
+                            </ngx-charts-bar-horizontal>
+                        </div>
+                    </div>
+                </div>
+               
+               
+               
+            </div>
+
+       

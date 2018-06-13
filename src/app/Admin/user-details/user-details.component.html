@@ -1,0 +1,62 @@
+﻿<!--<h1 class="h4">User Details</h1>
+<div class="user-list-conainer">
+    <h4 class="mb-3">User :  <span class="badge badge-secondary">{{userDetails.UserName}}</span></h4>
+    <div class="user-pic" style="background-image: url(../../../assets/img/img-user.jpeg);"></div>
+    <div class="text">
+        <h5 class="mb-3">User Email :  <span class="badge badge-secondary">  <strong>{{userDetails.Email}}</strong></span></h5>
+        <h5 class="mb-3">User Phone Number :  <span class="badge badge-secondary">  <strong>{{userDetails.PhoneNumber}}</strong></span></h5>
+        <h5 class="mb-3">User First Name :  <span class="badge badge-secondary">  <strong>{{userDetails.FirstName}}</strong></span></h5>
+        <h5 class="mb-3">User Last Name :  <span class="badge badge-secondary">  <strong>{{userDetails.LastName}}</strong></span></h5>
+    </div>
+
+</div>-->
+
+<div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+        <h1 class="h4">{{'AdminModule.Label.UserDetails' | translate}}</h1>
+        <div class="card">
+            <form (submit)="saveUserDeatails()">
+                 <div class="card-body"  [formGroup]="userDetails">
+                     <div class="form-container">
+                         <div class="form-group">
+                             <label>{{'AdminModule.Label.Email' | translate}}</label>
+                             <input type="text" class="form-control" formControlName="Email" disabled>
+                         </div>
+                         <div class="form-group">
+                             <label>{{'AdminModule.Label.FirstName' | translate}}</label>
+                             <input type="text" class="form-control" formControlName="FirstName">
+                         </div>
+                         <div class="form-group">
+                             <label>{{'AdminModule.Label.LastName' | translate}}</label>
+                             <input type="text" class="form-control" formControlName="LastName">
+                         </div>
+                         <div class="form-group">
+                             <label>{{'AdminModule.Label.PhoneNumber' | translate}}</label>
+                             <input type="text" class="form-control" formControlName="PhoneNumber">
+                         </div>
+
+                         <div class="form-group">
+                             <div formArrayName="Projects" class="row">
+                                 <div class="col-lg-4 col-md-6" *ngFor="let project of userDetails?.controls['Projects']?.controls; let i=index" [formGroupName]="i">
+                                     <div class="form-check form-check-custom pl-0">
+                                         <label>
+                                             <input class="form-check-input" type="checkbox" formControlName="IsSelected">{{userDetails.controls['Projects'].controls[i].controls['Name'].value | translate}}
+                                             <span class="squire-check-mark"></span>
+                                         </label>
+                                     </div>
+                                 </div>
+                                 <div class="form-text text-danger" *ngIf="userDetails.get('Projects').hasError('multipleCheckboxRequireOne')">{{'CoreModule.Validations.Select' | translate}}</div>
+                             </div>
+                         </div>
+
+                         <div class="d-flex flex-row justify-content-between">
+                             <a routerLink="/admin/userlist" class="btn btn-success"><span class="ion-chevron-left"></span> Back To Listing</a>
+                             <button type="submit" class="btn btn-primary">{{'AdminModule.Button.Update' | translate}}</button>
+                         </div>
+                     </div>
+                
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿<div class="row">
+    <div class="col-md-offset-2 col-md-12">
+        
+        <h4>{{isNew?('CustomerModule.Label.AddWorkItem' | translate): ('CustomerModule.Label.EditWorkItem' | translate)}}</h4>
+        <div class="card">
+            <div class="card-body">
+
+                <div class="form-container" [formGroup]="workItemForm">
+                    <div class="form-group" *ngIf="workItemId>0">
+                        <label><mark>#{{workItemId}}</mark></label>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'CustomerModule.Label.Title' | translate}}</label>
+                        <input type="text" class="form-control" placeholder="{{'CustomerModule.Placeholder.AddTitle' | translate}}" formControlName="Title" />
+                        <div class="form-text text-danger w-100" *ngIf="workItemForm.get('Title').touched && workItemForm.get('Title').hasError('required')">{{'CustomerModule.Validations.TitleRequired' | translate}}</div>
+                    </div>
+                    <!--<div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" rows="3" formControlName="Description" placeholder="Add Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, </textarea>
+                </div>-->
+                    <div class="form-group">
+                        <label>{{'CustomerModule.Label.Description' | translate}}</label>
+                        <ckeditor [config]="editorConfig.ConfigSetting" formControlName="Description" [readonly]="!deatilsEditable"></ckeditor>
+                    </div>
+                    <div class="form-group form-group-discussion">
+                        <label>{{'CustomerModule.Label.Discussion' | translate}}</label>
+
+                        <div class="d-flex flex-row">
+                            <div class="user-pic-container mr-2">{{'CustomerModule.Label.V' | translate}}</div>
+                            <ckeditor [config]="editorConfig.DiscriptionConfig" formControlName="Comment" [readonly]="!customerFeedbackEditable"></ckeditor>
+                        </div>
+                        <div class="mt-4">
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let item of workItemForm.controls['comments'].controls"><mark><label [innerHTML]="item.controls['Date'].value"></label></mark><span [innerHTML]="item.controls['Text'].value"></span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-right">
+                        <button *ngIf="isNew" [disabled]="workItemForm.invalid" type="button" class="btn btn-primary mt-2 min-width" (click)="createWorkItem()">{{'CustomerModule.Button.Save' | translate}} </button>
+                        <button *ngIf="!isNew" [disabled]="workItemForm.invalid" type="button" class="btn btn-primary mt-2 min-width" (click)="updateWorkItem()">{{'CustomerModule.Button.Update' | translate}}</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

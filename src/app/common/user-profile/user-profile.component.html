@@ -1,0 +1,47 @@
+﻿<h1 class="h4">My Profile</h1>
+<form [formGroup]="formData">
+    <div class="card my-profile">
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-xl-8 col-left">
+                    <div class="form-group">
+                        <label>{{'AdminModule.Label.Email' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="Email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>{{'AdminModule.Label.FirstName' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="FirstName">
+                    </div>
+                    <div class="form-group">
+                        <label>{{'AdminModule.Label.LastName' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="LastName">
+                    </div>
+                    <div class="form-group">
+                        <label>{{'AdminModule.Label.PhoneNumber' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="PhoneNumber">
+                    </div>
+                    <button type="button" class="btn btn-primary mt-2" (click)="saveUserProfileData()">Update</button>
+                </div>
+
+                <div class="col-xl-4 col-right">
+                    <div class="form-group upload-img-box d-flex flex-row justify-content-between rounded">
+                        <div class="picture-block border rounded">
+                            <img src="{{ProPic}}" class="img-fluid" alt="Profile Picture" />
+                        </div>
+                        <div class="action-block text-right">
+                            <label>Upload/Change Image</label>
+                            <div class="upload-btn-holder">
+                                <div class="btn btn-dark">
+                                    <kendo-upload accept=".png,.jpg" class="kendo-upload-file" [saveUrl]="uploadSaveUrl" (success)="successEventHandler($event)">
+                                    </kendo-upload>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

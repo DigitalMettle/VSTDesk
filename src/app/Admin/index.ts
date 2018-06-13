@@ -1,0 +1,8 @@
+export { DashboardComponent } from './dashboard/dashboard.component'
+//export { AdminRouteModule } from './admin.routes'
+export { ProjectSettingsComponent } from './project-settings/project-settings.component'
+export { AdminService } from './services/admin.service'
+export { InviteUserComponent } from './invite-user/invite-user.component'
+export { UserListComponent } from './user-list/user-list.component'
+export { UserDetailsComponent } from './user-details/user-details.component'
+export { CompanySettingsComponent } from './company-settings/company-settings.component'

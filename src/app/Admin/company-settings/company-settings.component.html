@@ -1,0 +1,35 @@
+﻿<h1 class="h4">Company Settings</h1>
+<form [formGroup]="formData">
+    <div class="row">
+        <div class="col-xl-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>{{'AdminModule.Label.CompanyMessage' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="CompanyMessage">
+                    </div>
+                    <div class="form-group">
+                        <label>Company Logo</label>
+                        <div class="upload-img-box d-flex flex-row justify-content-between rounded">
+
+                            <div class="picture-block border rounded">
+                                <img class="img-fluid" src="{{companyLogo}}" alt="Profile Picture" />
+                            </div>
+
+                            <div class="action-block text-right">
+                                <label>Upload/Change Image</label>
+                                <div class="upload-btn-holder">
+                                    <div class="btn btn-dark">
+                                        <kendo-upload accept=".png,.jpg" class="kendo-upload-file" [saveUrl]="uploadSaveUrl" (success)="successEventHandler($event)">
+                                        </kendo-upload>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-2" (click)="saveCompanySettings()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

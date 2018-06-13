@@ -1,0 +1,17 @@
+<a *ngIf="!item.hasSubItems()" [routerLink]="[item.route]" routerLinkActive="active-tab">
+   <i [ngClass]="item.icon"></i>
+    <span class="list-title">{{ item.name }}</span>
+     <!--<i class="ion-ios-arrow-right"></i>-->
+</a>
+
+<a *ngIf="item.hasSubItems()">
+   <i></i>
+    <span class="list-title">{{ item.name }}</span>
+     <!--<i class="ion-ios-arrow-right"></i>-->
+</a>
+
+<!--<ul class="list" [style.height]="getSubItemsHeight()">
+    <li class="list-item">
+    <app-sidenav-menu-item *ngFor="let subItem of item.subItems" [item]="subItem"></app-sidenav-menu-item>
+    </li>
+</ul>-->

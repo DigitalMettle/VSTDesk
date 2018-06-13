@@ -1,0 +1,53 @@
+<div class="app-main-container">
+    <nav class="app-header">
+        <div class="container-fluid">
+            <div class="header-left">
+                <div class="brand-containter">
+                    <button type="button" class="navigation" (click)="sidbarToggle()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <!--<i class="ion-navicon"></i>-->
+                    </button>
+                    <div class="logo">VST<span>Desk</span></div>
+                </div>
+                <!--<div class="header-breadcrumb">
+                    Dashborad
+                </div>-->
+            </div>
+            <div class="header-right">
+                <ul class="nav">
+                    <!--<li class="nav-items-notification">
+                        <a href="javascript: Void(0)">
+                            <i class="ion-ios-bell"></i>
+                            <span class="badge">75</span>
+                        </a>
+
+                    </li>-->
+                    <li class="nav-items-user-info">
+                        <a href="JavaScript:(0)">
+                            <span *ngIf="isShow" class="user-picture" [ngStyle]="{'background-image': 'url(' + userProfile.ProfileImageUrl + ')'}"></span>
+                            <span class="user-name hidden-xs">{{userProfile.FirstName}} {{userProfile.LastName}}</span>
+                            <i class="ion-chevron-down"></i>
+                        </a>
+                        <ul class="user-profile-dropdown">
+                            <!--<li><a href=""><i class="ion-gear-a"></i> Profile Settings</a></li>
+                            <li><a href=""><i class="ion-log-in"></i> Login</a></li>-->
+                            <li><a href="JavaScript:(0)" (click)="navigateToProfile()"><i class="ion-android-contact"></i>My Profile</a>
+                            <li><a (click)="logout()" href="JavaScript:(0)"><i class="ion-log-out"></i> Log Out</a></li>
+                            <!--<li><a href=""><i class="ion-person"></i> My Profile</a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <app-sidenav></app-sidenav>
+    <div class="content">
+        <main class="app-main-content">
+            <router-outlet></router-outlet>
+        </main>
+        <app-footer></app-footer>
+    </div>
+</div>

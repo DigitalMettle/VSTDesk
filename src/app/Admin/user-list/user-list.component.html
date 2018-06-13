@@ -1,0 +1,56 @@
+﻿<h1 class="h4">
+    {{'AdminModule.Label.Users' | translate}}
+</h1>
+<div class="row user-list">
+    <div class="col-xl-8">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="JavaScript: Void(0)" routerLink="/admin/inviteuser">{{'AdminModule.Button.AddUser' | translate}}</a>
+                        </li>
+                        <!--<li class="breadcrumb-item">
+                            <a href="JavaScript: Void(0)">{{'AdminModule.Button.Group' | translate}}</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="JavaScript: Void(0)">{{'AdminModule.Button.Organization' | translate}}</a>
+                        </li>vr
+                        <li class="breadcrumb-item">
+                            <a href="JavaScript: Void(0)">{{'AdminModule.Button.AddUser' | translate}}</a>
+                        </li>-->
+                    </ol>
+                </nav>
+                
+
+                <div class="search-container mb-4">
+                    <div class="input-group">
+                        <input class="form-control" [(ngModel)]="searchText" (input)="searchUser()" placeholder="{{'AdminModule.Placeholder.SearchUser' | translate}}">
+                        <div class="input-group-addon"><button type="button" (click)="searchUser()" class="btn btn-primary"> <i class="ion-ios-search-strong"></i></button></div>
+                    </div>
+                </div>
+
+                <div class="user-list-conainer">
+                    <h4 class="mb-3">{{'AdminModule.Label.User' | translate}}<span class="badge badge-secondary">{{totalUsers}}</span></h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex flex-row px-0 has-edit-button" *ngFor="let user of userList ">
+                            <div  class="user-pic" [ngStyle]="{'background-image': 'url(' + user.ProfilePhoto + ')'}"></div>
+                            
+                            <div class="text">
+
+                                <strong>{{user.FirstName}} {{user.LastName}}</strong>
+                                <p class="mb-0 text-muted">{{user.Email}}</p>
+                            </div>
+
+                            <div class="buttons-group-holder">
+                                <button type="button" (click)="deleteUser(user.Id)" class="btn btn-outline-secondary btn-sm"><i class="ion-ios-trash-outline"></i></button>
+                                <button type="button" (click)="getUserDetails(user)" class="btn btn-outline-secondary btn-sm"><i class="ion-edit"></i></button>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
